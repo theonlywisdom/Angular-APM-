@@ -42,8 +42,15 @@
               >
             </td>
             <td>{{product.productName}}</td>
-            <td>{{product.productCode | lowercase}}</td>
+            <!--add pipes for converting product code to lowercase, and a special character to space.
+            then declare the custom pipe (convertToSpaces)
+            in the app module declarations
+            -->
+            <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
             <td>{{product.releaseDate}}</td>
+            <!-- currency pipe that implements the symbol and
+            decimal places
+            -->
             <td>{{product.price | currency:'GBP':'symbol':'1.2-2'}}</td>
             <td>{{product.starRating}}</td>
           </tr>
