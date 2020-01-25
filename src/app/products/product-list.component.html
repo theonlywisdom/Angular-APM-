@@ -36,7 +36,8 @@
         </thead>
 
         <tbody>
-          <tr *ngFor= 'let product of products'>
+          <!--this template bind to the filteredProducts property-->
+          <tr *ngFor= 'let product of filteredProducts'>
             <td>
               <img *ngIf= 'showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'
               >
