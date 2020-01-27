@@ -1,11 +1,13 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'pm-star',
   templateUrl: './star.component.html', styleUrls: ['./star.component.css']
 })
 export class StarComponent implements OnChanges {
-  rating: number = 4;
+  //add the Input() decorator to the rating property to expose it
+  // to the star component's container
+  @Input() rating: number;
   starWidth: number;
 
   ngOnChanges(): void {

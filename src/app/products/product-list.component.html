@@ -53,7 +53,9 @@
             decimal places
             -->
             <td>{{product.price | currency:'GBP':'symbol':'1.2-2'}}</td>
-            <td><pm-star></pm-star></td>
+            <!--add the mested star component
+            then bind the rating input property the target of the binding. Set the binding source to the product's star rating-->
+            <td><pm-star [rating]= 'product.starRating'></pm-star></td>
           </tr>
         </tbody>
       </table>
