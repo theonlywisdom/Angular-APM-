@@ -56,6 +56,10 @@ export class ProductListComponent implements OnInit {
     this.listFilter = 'cart';
   }
 
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Product List: ' + message;
+  }
+
   /*the performFilter method starts by:
   converting the filter criteria to lower case for a case insentive comparison
   then return the filtered list of products
