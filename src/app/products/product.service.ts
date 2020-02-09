@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, from, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { IProduct } from './product';
