@@ -42,7 +42,11 @@
               <img *ngIf= 'showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'
               >
             </td>
-            <td>{{product.productName}}</td>
+            <td>
+              <a [routerLink]="['/products', product.productId]">
+                {{product.productName}}
+              </a>
+            </td>
             <!--add pipes for converting product code to lowercase, and a special character to space.
             then declare the custom pipe (convertToSpaces)
             in the app module declarations
