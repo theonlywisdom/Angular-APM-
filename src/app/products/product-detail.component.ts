@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { IProduct } from './product';
 import { from } from 'rxjs';
@@ -16,7 +16,7 @@ export class ProductDetailComponent implements OnInit {
   //as a parameter to the constructor function
   //the ActivatedRoute instance is then injected into
   //this component class
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     //we're using the snapshot approach here because 
@@ -40,6 +40,12 @@ export class ProductDetailComponent implements OnInit {
       "imageUrl": "assets/images/leaf_rake.png"
   
     }
+  }
+
+  //lets build a method that navigates back
+  //this method does not take any parameters and does not return anything(void)
+  onBack(): void {
+    this.router.navigate(['/products']);
   }
 
 }
