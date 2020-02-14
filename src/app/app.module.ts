@@ -11,6 +11,7 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
+import { ProductDetailGuard } from './products/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { WelcomeComponent } from './home/welcome.component';
       //it this component template that is displayed when the component is activated
       { path: 'products', component: ProductListComponent },
       //we can add multiple route parameters separated by slashes(/)
-      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'products/:id', canActivate: [ProductDetailGuard], component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       //when the app loads we want to default to the WelcomeComponent
       //so we specify a default route that redirects to the WelcomeComponent
