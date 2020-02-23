@@ -13,6 +13,12 @@ import { ProductModule } from './products/product.module';
     WelcomeComponent
   ],
   imports: [
+    //registers critical application service providers
+    //it also imports and exports the CommonModule,
+    //which declares and exports directives such as
+    //ngIf  and ngFor
+    //these directivs are then are then available to
+    //any of the AppModule's Components templates
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
